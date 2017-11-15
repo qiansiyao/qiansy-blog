@@ -1,4 +1,35 @@
-###H5项目常见问题及注意事项
+H5项目常见问题及注意事项
+
+iframe 设置
+     支持safari时，不会有滚动条出现，需在iframe外框包含一个div为que-cover，在div中设置
+     -webkit-overflow-scrolling: touch;
+      overflow-y: scroll;
+      来支持用手触摸滚动
+      
+      此时webkit和ie浏览器会出现两条滚动条，样式比较难看，设置滚动条样式：
+      ie下：
+     .que-cover {
+         scrollbar-face-color: #fff; /*ie*/
+         scrollbar-arrow-color: #fff;
+         scrollbar-base-color: #fff;
+         scrollbar-shadow-color: #fff;
+    }
+    webkit下：
+    .que-cover::-webkit-scrollbar {
+           width: 1px;   //注意此属性不能缺少，否则下面的样式无效
+    }
+    .que-cover::-webkit-scrollbar-track {
+           background-color: #fff;
+    }
+    .que-cover::-webkit-scrollbar-thumb {
+          background-color: #fff;
+    }
+    .que-cover::-webkit-scrollbar-button {
+          background-color: #fff;
+    }
+    .que-cover::-webkit-scrollbar-corner {
+           background-color: #fff;
+    }
 
 Meta基础知识：
 
